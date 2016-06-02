@@ -2,7 +2,7 @@
 
 #define SCREEN_WIDTH 80
 #define SCREEN_HEIGHT 25
-
+#define HEX_DIGITS "0123456789ABCDEF"
 
 u16int *VGA = (u16int *)0xb8000;
 
@@ -131,4 +131,28 @@ void vga_puts(char *s)
     {
         vga_putc(*s++);
     }
+}
+
+void vga_put_hex(u32int val)
+{
+    vga_puts("0x");
+    int i;
+    for (i = 28; i >= 0; i -= 4)
+    {
+        vga_putc(HEX_DIGITS[(val >> i) & 0x0F]);
+    }
+}
+
+void vga_put_dec(s32int val)
+{
+    if (val < 0) 
+    {
+        vga_putc('-');
+        val = -val;
+    }
+    if (val >= 10)
+    {
+        vga_put_dec(val / 10);
+    }
+    vga_putc('0' + (val % 10));
 }

@@ -9,12 +9,14 @@ void vga_clear();
 
 void vga_puts(char *s);
 
+void vga_put_hex(u32int val);
+void vga_put_dec(s32int val);
+
 u8int make_vga_color(u8int bg, u8int fg);
 void set_vga_color(u8int col);
 u8int get_vga_color();
 
 void move_vga_cursor(u16int x, u16int y);
-
 
 #define COLOR_BLACK 0
 #define COLOR_BLUE 1
