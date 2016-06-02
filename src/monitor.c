@@ -125,7 +125,7 @@ void vga_clear()
     move_cursor();
 }
 
-void vga_puts(char *s)
+void vga_puts(const char *s)
 {
     while (*s != 0)
     {

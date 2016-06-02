@@ -7,7 +7,7 @@ void vga_putc(char c);
 
 void vga_clear();
 
-void vga_puts(char *s);
+void vga_puts(const char *s);
 
 void vga_put_hex(u32int val);
 void vga_put_dec(s32int val);
