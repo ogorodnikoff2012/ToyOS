@@ -8,9 +8,9 @@ u32int tick = 0;
 static void timer_callback(registers_t regs)
 {
     tick++;
-    LOG("Tick: ");
-    vga_put_dec(tick);
-    vga_putc(' ');
+//    LOG("Tick: ");
+//    vga_put_dec(tick);
+//    vga_putc(' ');
 }
 
 void init_timer(u32int freq)
