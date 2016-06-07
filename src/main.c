@@ -2,6 +2,7 @@
 #include "monitor.h"
 // #include "int32_test.h"
 #include "descriptor_tables.h"
+#include "timer.h"
 
 int kernel_main(struct multiboot *mboot_ptr)
 {
@@ -10,6 +11,7 @@ int kernel_main(struct multiboot *mboot_ptr)
     vga_clear();
 
     init_descriptor_tables();
+    init_timer(DEFAULT_FREQUENCY);
 
     vga_puts("\n\n>>>\tHello ToyOS!\n\n");
     vga_puts("kernel_main() addr: ");
