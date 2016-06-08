@@ -11,7 +11,7 @@ static void kbd_handler(registers_t regs)
     LOG("Kbd ");
     vga_put_dec(status);
     vga_putc(' ');
-    vga_put_dec(code);
+    vga_put_hex(code);
 }
 
 void init_keyboard()

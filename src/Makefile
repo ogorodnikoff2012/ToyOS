@@ -1,7 +1,7 @@
 SOURCES=boot.o main.o common.o monitor.o descriptor_tables.o gdt.o \
 	interrupt.o isr.o timer.o keyboard.o 
 
-CFLAGS=-m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector
+CFLAGS=-m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -I headers
 LDFLAGS=-melf_i386 -Tlink.ld
 ASFLAGS=-felf
 
